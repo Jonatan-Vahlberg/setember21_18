@@ -108,22 +108,11 @@ function producePrompt2(promptLocation1,promptLocation2,promptLocation3,promptLo
 function validateNewForm(){
 
     if(!validateName() || !validatePass() || !validatePass2() || !validateMail()){
-        jsShow("submitLabel1")
-        producePrompt("submitLabel1","newButtonSub","#A00000","thick solid #A00000")
-        setTimeout(function(){jsHide("submitLabel1");}, 3000);
-        return false;
+        alert("One or more of the forms is Invalid");
     }
     else{
-        producePrompt("submitLabel1","newButtonSub","#006121","thick solid #006121");
-        document.location = "./login.html"
+        alert("Everything is in order proceding to submit");
     }
-}
-function jsShow(id){
-    document.getElementById(id).style.display = "initial"
-}
-function jsHide(id){
-    document.getElementById(id).style.display = "none"
-    
 }
 
 
