@@ -41,11 +41,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
 body,html{
     width:100%;
     height:100%;
 
 }
+/*NAVIGATION*/
 nav{
     height: 60px;
     color: transparent;
@@ -99,6 +102,9 @@ nav > #logo{
     width:100px;
 
 }
+
+/*SECTION*/
+
 #iS{
     background-size: cover;
     width:100%;
@@ -127,7 +133,26 @@ nav > #logo{
 
     width:60%;
 }
-article{
+#iS > #cave{
+    position: absolute;
+    left:44%;
+    top:14%;
+    width:24%;
+    height:12%;
+}
+#iS.zoom{
+    animation: cave 5s linear 1s 1 normal forwards;
+}
+
+
+@keyframes cave{
+    0%{transform: scale(1.0);}
+    100%{transform:scale(1.9);}
+}
+
+/*ARTICLE*/
+
+article:not(#loginArt){
     clear: both;
     display: flex;
     flex-direction: row;
@@ -151,6 +176,81 @@ article img[alt="diamond"]{
     filter: grayscale(100%);
 
 }
+/*LOGIN*/
+    #loginArt{
+    width: 100%;
+    min-height: 70%;
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+    #loginArt > #newUser, #loginArt > #oldUser{
+        width: 350px;
+        height:350px;
+        position: absolute;
+        margin-bottom: 30px;
+    }
+    #loginArt > #newUser{
+        display: none;
+    }
+    #newUser > #newForm input,
+    #oldUser > #oldForm input{
+        width:100%;
+        padding:5px;
+        margin: 5px 0 10px 0;
+        background: rgba(0, 192, 198, 0.9);
+        color:white;
+        font-weight:bold;
+        border-radius: 4px;
+    }
+    #newForm input[type="submit"]{
+        background: rgba(25, 188, 0, 0.569);
+        font-size: 25px;
+    }
+    #loginArt h3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        text-align: center;
+    }
+    #oldBu,#newBu{
+        
+        align-items: center;
+        font-size: 20px;
+    }
+    #newForm .tool{
+        width: 325px;
+        height:70px;
+        padding:10px;
+        position: absolute;
+        right: 101%;
+        background: rgba(0, 0, 0, 0.653);
+        color:white;
+        border-radius: 9px;
+        visibility: hidden;
+        font-size: 14px;
+    }
+    #newForm #tooltipName{
+        bottom: 50%;
+    }
+    #newForm #tooltipPass{
+        bottom: 40%;
+    }
+    #newForm #tooltipMail{
+        bottom: 0%;
+    }
+    .cont #infoName1:hover  #tooltipName,
+    .cont #infoPass1:hover  #tooltipPass,
+    .cont #infoMail1:hover  #tooltipMail{
+        visibility: visible;
+    }
+/*FOOTER*/
+
+
 footer{
     background: rgb(0, 0, 0,0.8);
 }
@@ -159,6 +259,9 @@ footer > p{
     
     color:white;
 }
+
+/*MEDIA*/
+/*600px*/
 @media (max-width:768px){
     article{
         flex-direction: column;
